@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0022e95fa4a00364b9d8ce244aa62f9d
+guid: 972208e0ea4caec45b6eb233cb137e0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -931425829407396535
-    second: b9fd0093-6f0c-4a92-9e67-23b76325fc35_0
+      213: -958586739008177159
+    second: beach!_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: b9fd0093-6f0c-4a92-9e67-23b76325fc35_0
+      name: beach!_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 424
-        height: 451
+        width: 400
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94d6c8f9429e213f0800000000000000
-      internalID: -931425829407396535
+      spriteID: 9fb740f807a62b2f0800000000000000
+      internalID: -958586739008177159
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      b9fd0093-6f0c-4a92-9e67-23b76325fc35_0: -931425829407396535
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
