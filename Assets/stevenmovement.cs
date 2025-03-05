@@ -4,46 +4,31 @@ using UnityEngine;
 
 public class stevenmovement : MonoBehaviour
 {
-    private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 16f;
+    public float movementSpeed;
+    float speedX, speedY;
+    Rigidbody2D rb;
     private bool isFacingRight = true;
 
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+    }
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        }
+        speedX = Input.GetAxisRaw("Horizontal") * movementSpeed;
+        speedY = Input.GetAxisRaw("Vertical") * movementSpeed;
+        rb.linearVelocity = new Vector2(speedX, speedY);
 
         Flip();
     }
 
-    private void FixedUpdate()
-    {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
-    }
-
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
     private void Flip()
     {
-        if (isFacingRight && horizontal == 0f || !isFacingRight && horizontal > 0f)
-                {
+        if (isFacingRight && speedX < 0f || !isFacingRight && speedX > 0f)
+        {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
